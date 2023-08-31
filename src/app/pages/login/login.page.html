@@ -1,0 +1,18 @@
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <ion-item class="input-redondeado">
+        <ion-input [(ngModel)]="email" type="text" placeholder="Email:"></ion-input>
+      </ion-item>
+      <ion-item class="input-redondeado">
+        <ion-input [(ngModel)]="contrasena" type="password" placeholder="Password:"></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-row>
+      <ion-col>
+        <ion-button (click)="login()" expand="block" color="medium">Acceder</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+</ion-content>
