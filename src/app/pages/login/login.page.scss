@@ -1,4 +1,9 @@
-ion-card{
+ion-content {
+   // --ion-background-color: #111111;
+
+}
+
+ion-card-content{
     max-width: 370px;
     margin: auto;
     margin-top: 200px;
@@ -9,10 +14,41 @@ ion-item{
 }
 
 ion-button{
-    margin-top: 5px;
+    margin-top: 0px;
     margin-bottom: 5px;
 }
 
 .input-redondeado {
-    border-radius: 10px;
+    border-radius: 0px;
+   //background-color: aqua;
+    //border-color: aqua;
 }
+
+.Forgotpass {
+    //margin-top: 1px;
+    text-align: center;
+    padding-top: 0px
+    
+}
+
+.img1 {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 20%;
+    transform: translateY(-50%);
+}
+
+.login{
+    padding-top: 15px;
+}
+
+.register{
+    padding-top: 80px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
