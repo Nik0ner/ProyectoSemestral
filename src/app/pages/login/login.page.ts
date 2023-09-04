@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FormGroup,FormControl,Validators,FormBuilder } from '@angular/forms';
 import { HelperServiceService } from 'src/app/services/helper-service.service';
 
 @Component({
@@ -9,32 +10,48 @@ import { HelperServiceService } from 'src/app/services/helper-service.service';
 })
 export class LoginPage implements OnInit {
 
-  email:string = "";
-  contrasena:string = "";
+  formularioLogin: FormGroup;
 
 
-  constructor(private router:Router, private helperService:HelperServiceService) { }
+  constructor(private router:Router ,private helperService:HelperServiceService, private formBuilder: FormBuilder) { 
+
+    this.formularioLogin = this.formBuilder.group({
+      'correo': new FormControl("", Validators.required),
+      'nombre': new FormControl("", Validators.required),
+      'pass': new FormControl("",Validators.required)
+    });
+
+  }
 
   ngOnInit() {
   }
 
-  login(){
-    if (this.email == "") {
-      //alert("Debe ingresar un email.");
-      this.helperService.showAlert("Debe ingresar un email", "Advertencia");
+  ingresar() {
+
+    const f = this.formularioLogin.value;  
+    const usuario = localStorage.getItem('user');
+
+    if(!usuario) {
+      this.helperService.showAlert("Usuario no existente", "Advertencia");
       return;
     }
-    if (this.contrasena == "") {
-      alert("Debe ingresar una contraseña.")
+
+    const user = JSON.parse(usuario);
+
+    if(user.correo !== f.correo) {
+      this.helperService.showAlert("Nombre de usuario incorrecto", "Advertencia");
       return;
     }
-    
-    if (this.email == "micorreo" && this.contrasena == "123") {
-      // alert("Login correcto.");
-      this.router.navigateByUrl("home");
-    }else{
-      alert("Crdeneciales no validas.");
+
+    if(user.pass !== f.pass) {
+      this.helperService.showAlert("Contrasena incorrecta", "Advertencia");
+      return;
     }
+
+    console.log('Login correcto');
+    this.router.navigateByUrl("/home");
+
+
   }
 
   RecuperarPass(){

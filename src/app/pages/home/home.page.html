@@ -1,8 +1,54 @@
-<div>
-  <ion-button (click)="logOut()" slot="end">
-    <ion-icon name="log-out-outline"></ion-icon>
-  </ion-button>
-</div>
+<ion-header>
+  <ion-toolbar>
+    <ion-button (click)="logOut()" slot="start" fill="clear">
+      <ion-icon name="arrow-undo-outline"></ion-icon>
+    </ion-button>
+    <ion-button (click)="cuenta()" slot="end" fill="clear">
+      <ion-icon name="cog"></ion-icon>
+    </ion-button>
+    <ion-title class="ion-text-center">Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content>
+
+  <ion-card>
+
+    <ion-card-content>
+      <h1 *ngIf="username">
+        ¡Bienvenido de nuevo {{username}}!
+      </h1>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-content>
+      <ion-button (click)="escanear()" fill="outline" expand="block" color="medium"
+            class="register">Escanear QR</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card>
+
+    <ion-card-content>
+      <ion-button (click)="asistencia()" fill="outline" expand="block" color="medium"
+            class="register">asistencia</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-card class="final">
+
+    <ion-card-content>
+      <ion-button (click)="logOut()"  fill="outline" expand="block" color="medium"
+            class="register">Cerrar sesion</ion-button>
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>
 
 

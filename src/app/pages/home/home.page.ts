@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,13 +8,41 @@ import { Route, Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
-  constructor(private router:Router) { }
+  username: string = '';
+
+  constructor(private router: Router) {
+  
+    const userString = localStorage.getItem('user');
+
+    if(userString) {
+      const user = JSON.parse(userString);
+      
+      if(user) {
+        this.username = user.nombre;
+      }
+    }
+
+  }
 
   ngOnInit() {
+
   }
 
   logOut(){
-    this.router.navigateByUrl("login");
+    this.router.navigateByUrl('login');
+    localStorage.removeItem('user');
+  }
+
+  escanear(){
+    this.router.navigateByUrl('escanear')
+  }
+
+  asistencia(){
+    this.router.navigateByUrl('asistencia')
+  }
+
+  cuenta(){
+    this.router.navigateByUrl('cuenta')
   }
 
 

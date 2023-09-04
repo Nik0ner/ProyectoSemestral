@@ -10,25 +10,32 @@
     <ion-col size-md="9" size="12" class="welcome">
       <ion-card-content>
 
-        <ion-row>
+        <form [formGroup]="formularioLogin" (ngSubmit)="ingresar()">
+
           <ion-item class="input-redondeado ">
-            <ion-input [(ngModel)]="email" size="32" type="text" fill="outline" placeholder="Email:"></ion-input>
+            <ion-input size="32" type="text" placeholder="Email:" formControlName="correo"></ion-input>
             <ion-icon name="mail-outline"></ion-icon>
           </ion-item>
           <ion-item class="input-redondeado">
-            <ion-input [(ngModel)]="contrasena" size="32" type="password" placeholder="Password:"></ion-input>
+            <ion-input size="32" type="password" placeholder="Password:" formControlName="pass"></ion-input>
             <ion-icon name="lock-closed-outline"></ion-icon>
           </ion-item>
 
-        </ion-row>
-        <ion-button (click)="login()" expand="block" class="login" color="medium">Acceder</ion-button>
+        </form>
+        
+        <ion-button type="submit"   expand="block" class="login" color="medium" (click)="ingresar()">Acceder</ion-button>
+
+      
+
         <div class="Forgotpass">
-          <ion-button (click)="RecuperarPass()" fill="clear">ForgotPassword?</ion-button>
+          <ion-button (click)="RecuperarPass()" fill="clear">¿Has olvidado tu contrasena?</ion-button>
         </div>
 
         <div class="ion-text-center">
-          <ion-button (click)="Registro()" fill="outline" expand="block" color="medium" class="register">Register</ion-button>
+          <ion-button (click)="Registro()" fill="outline" expand="block" color="medium"
+            class="register">Registrarse</ion-button>
         </div>
+
       </ion-card-content>
     </ion-col>
 

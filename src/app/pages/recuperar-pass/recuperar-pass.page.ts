@@ -26,12 +26,7 @@ export class RecuperarPassPage implements OnInit {
       this.helperService.showAlert("Debe ingresar un email", "Advertencia");
       return;
     }
-    if (this.email == "micorreo") {
-      // alert("Login correcto.");
-      this.router.navigateByUrl("pass-recuperada");
-    }else{
-      this.helperService.showAlert("Correo no registrado","Advertencia");
-    }
+    this.router.navigateByUrl("pass-recuperada");
   }
 
 }

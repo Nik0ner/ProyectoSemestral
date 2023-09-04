@@ -1,13 +1,36 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>registro</ion-title>
+    <ion-button (click)="logOut()" slot="start" fill="clear">
+      <ion-icon name="arrow-undo-outline"></ion-icon>
+    </ion-button>
+    <ion-title>Registro</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">registro</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card-content>
+
+    <form [formGroup]="formularioRegistro" (keyup.enter)="guardar()">
+      
+      <ion-item class="ion-margin-bottom">
+        <ion-input label="Correo" label-placement="floating" fill="outline" placeholder="Ingrese correo:"
+          formControlName="correo"></ion-input>
+      </ion-item>
+
+      <ion-item class="ion-margin-bottom">
+        <ion-input label="Usuario" label-placement="floating" fill="outline" placeholder="Ingrese nombre de usuario:"
+          formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input label="Contrasena" type="password" label-placement="floating" fill="outline"
+          placeholder="Ingrese su contrasena: " formControlName="pass"></ion-input>
+      </ion-item>
+
+      <ion-button (click)="guardar()" fill="outline" expand="block" color="medium"
+        class="ion-margin-top ion-no-margin">Registrarse</ion-button>
+
+    </form>
+
+  </ion-card-content>
 </ion-content>
