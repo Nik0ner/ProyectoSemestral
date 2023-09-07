@@ -6,18 +6,17 @@
         alt="Ionic logo" loading="lazy" class="img1" />
     </div>
 
-
     <ion-col size-md="9" size="12" class="welcome">
       <ion-card-content>
 
-        <form [formGroup]="formularioLogin" (ngSubmit)="ingresar()">
+        <form [formGroup]="formularioLogin" >
 
           <ion-item class="input-redondeado ">
-            <ion-input size="32" type="text" placeholder="Email:" formControlName="correo"></ion-input>
+            <ion-input size="32" [(ngModel)]="email" type="text" placeholder="Email:" formControlName="correo"></ion-input>
             <ion-icon name="mail-outline"></ion-icon>
           </ion-item>
           <ion-item class="input-redondeado">
-            <ion-input size="32" type="password" placeholder="Password:" formControlName="pass"></ion-input>
+            <ion-input size="32" [(ngModel)]="contrasena" type="password" placeholder="Password:" formControlName="pass"></ion-input>
             <ion-icon name="lock-closed-outline"></ion-icon>
           </ion-item>
 

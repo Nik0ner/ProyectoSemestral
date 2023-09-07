@@ -17,5 +17,8 @@ export class CuentaPage implements OnInit {
     this.router.navigateByUrl('login')
     localStorage.removeItem('user');
   }
-
+  
+  back(){
+    this.router.navigateByUrl('home')
+  }
 }

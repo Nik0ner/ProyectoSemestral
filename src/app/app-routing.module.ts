@@ -29,7 +29,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/registro/registro.module').then( m => m.RegistroPageModule)
   },
   {
-    path: 'escanear',
+    path: ':num/escanear',
     loadChildren: () => import('./pages/escanear/escanear.module').then( m => m.EscanearPageModule)
   },
   {
