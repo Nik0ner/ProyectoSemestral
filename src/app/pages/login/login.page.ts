@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
     const f = this.formularioLogin.value;  
     const usuario = localStorage.getItem('user');
 
-  if(f.correo === 'admin' && f.pass === '123') {
+  if(f.correo === 'pgy4121-002d' && f.pass === 'pgy4121-002d') {
     console.log('Bienvenido administrador!');
     this.router.navigateByUrl("/home");
     return;

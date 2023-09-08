@@ -1,6 +1,28 @@
 <ion-header >
   <ion-toolbar>
-    <ion-title>escaneado</ion-title>
+    <ion-title class="ion-text-center">Visualizacion de asistencia</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
+<ion-card>
+  <ion-card-content class="button-container">
+    <ion-card>
+      <ion-item>
+        <ion-label>USUARIO: </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>SECCION</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>ASIGNATURA</ion-label>
+      </ion-item>
+    </ion-card>
+  </ion-card-content>
+</ion-card>
+<ion-card>
+  <ion-card-content class="button-container">
+    <ion-button fill="outline" expand="block" (click)="salir()">Confirmar</ion-button>
+    <ion-button fill="outline" expand="block" (click)="cancel()">Cancelar</ion-button>
+  </ion-card-content>
+</ion-card>

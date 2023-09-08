@@ -22,4 +22,8 @@ export class EscanearPage implements OnInit {
     //localStorage.removeItem('user');
   }
 
+  Asisver(){
+    this.router.navigateByUrl('escaneado')
+  }
+
 }
