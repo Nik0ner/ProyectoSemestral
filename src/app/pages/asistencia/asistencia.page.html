@@ -7,10 +7,39 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asistencia</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-item button detail="true" detail-icon="caret-forward-outline">
+      <ion-label>
+        <h3>Programacion</h3>
+        <p>Porcentaje de asistencia : 50%</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item button detail="true" detail-icon="caret-forward-outline">
+      <ion-label>
+        <h3>Asignatura</h3>
+        <p>Porcentaje de asistencia : 0%</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-item button detail="true" detail-icon="caret-forward-outline">
+      <ion-label>
+        <h3>Asignatura</h3>
+        <p>Porcentaje de asistencia : 0%</p>
+      </ion-label>
+    </ion-item>
+  </ion-card>
+
+
+
+  <ion-card-content>
+    <ion-button (click)="logOut()" fill="outline" expand="block" color="medium" class="register">Atras</ion-button>
+  </ion-card-content>
+
+
 </ion-content>

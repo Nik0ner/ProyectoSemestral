@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'cuenta',
     loadChildren: () => import('./pages/cuenta/cuenta.module').then( m => m.CuentaPageModule)
   },
+  {
+    path: 'escaneado',
+    loadChildren: () => import('./pages/escaneado/escaneado.module').then( m => m.EscaneadoPageModule)
+  },
 ];
 
 @NgModule({

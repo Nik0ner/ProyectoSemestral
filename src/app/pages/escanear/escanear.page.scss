@@ -1,3 +1,16 @@
 ion-grid {
-    align-items: start;
+  align-items: start;
+}
+
+.img-wrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  //border-radius: 50%;
 }

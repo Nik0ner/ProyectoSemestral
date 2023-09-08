@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./asistencia.page.scss'],
 })
 export class AsistenciaPage implements OnInit {
-
+  
   constructor(private router:Router) { }
 
   ngOnInit() {
@@ -15,7 +15,8 @@ export class AsistenciaPage implements OnInit {
 
   logOut(){
     this.router.navigateByUrl('home');
-    localStorage.removeItem('user');
   }
 
 }
+
+
