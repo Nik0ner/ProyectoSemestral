@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HelperServiceService } from 'src/app/services/helper-service.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-recuperar-pass',
@@ -11,7 +12,7 @@ export class RecuperarPassPage implements OnInit {
 
   email:string = "";
 
-  constructor(private router:Router,private helperService:HelperServiceService) { }
+  constructor(private router:Router,private helperService:HelperServiceService, public auth : AuthService) { }
 
   ngOnInit() {
   }
@@ -25,8 +26,11 @@ export class RecuperarPassPage implements OnInit {
       //alert("Debe ingresar un email.");
       this.helperService.showAlert("Debe ingresar un email", "Advertencia");
       return;
+    } else {
+      this.auth.resetPassword(this.email)
+      .then(() => {
+      this.router.navigateByUrl("pass-recuperada");
+      })
     }
-    this.router.navigateByUrl("pass-recuperada");
   }
-
 }

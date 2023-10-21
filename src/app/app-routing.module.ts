@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
+
 
 const routes: Routes = [
   
@@ -14,11 +16,12 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'recuperar-pass',
-    loadChildren: () => import('./pages/recuperar-pass/recuperar-pass.module').then( m => m.RecuperarPassPageModule)
+    loadChildren: () => import('./pages/recuperar-pass/recuperar-pass.module').then( m => m.RecuperarPassPageModule),
   },
   {
     path: 'pass-recuperada',
@@ -30,19 +33,23 @@ const routes: Routes = [
   },
   {
     path: ':num/escanear',
-    loadChildren: () => import('./pages/escanear/escanear.module').then( m => m.EscanearPageModule)
+    loadChildren: () => import('./pages/escanear/escanear.module').then( m => m.EscanearPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'asistencia',
-    loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule)
+    loadChildren: () => import('./pages/asistencia/asistencia.module').then( m => m.AsistenciaPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'cuenta',
-    loadChildren: () => import('./pages/cuenta/cuenta.module').then( m => m.CuentaPageModule)
+    loadChildren: () => import('./pages/cuenta/cuenta.module').then( m => m.CuentaPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'escaneado',
-    loadChildren: () => import('./pages/escaneado/escaneado.module').then( m => m.EscaneadoPageModule)
+    loadChildren: () => import('./pages/escaneado/escaneado.module').then( m => m.EscaneadoPageModule),
+    canActivate: [AuthGuard]
   },
 ];
 
